@@ -1,0 +1,33 @@
+.why-section {
+  position: relative;
+  padding: 3rem 3vw 8rem 3vw;
+  background: #0d0d0d;
+  color: #fffce1;
+}
+
+.why-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.why-heading .brace {
+  font-size: 3rem;
+  line-height: 0.7;
+}
+
+.title-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.why-copy {
+  font-family: 'PPMori', sans-serif;
+  font-size: clamp(2rem, 4.2vw, 6rem);
+  line-height: 1.1;
+  margin: 0;
+  max-width: 1200px;
+} 

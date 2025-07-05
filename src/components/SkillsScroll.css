@@ -1,0 +1,72 @@
+.skills-wrapper {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  background: #0d0d0d;
+  color: #fffce1;
+  padding: 3rem 3vw 0 3vw;
+  font-family: 'PPMori', sans-serif;
+}
+
+.skills-heading {
+  margin: 0 0 3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.skills-heading .brace {
+  font-size: 3rem;
+  line-height: 0.7;
+}
+
+.skills-heading .title-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.skills-progress-bar {
+  position: absolute;
+  top: 1em;
+  left: 13vw;
+  width: 65vw;
+}
+
+.skills-progress-mask {
+  width: 0;
+}
+
+.skills-container {
+  display: flex;
+  width: 500vw; /* 5 sections */
+}
+
+.skill-section {
+  width: 100vw;
+  padding: 8vw 10vw;
+  box-sizing: border-box;
+}
+
+.skill-section h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.skill-section .col {
+  display: flex;
+  gap: 3em;
+}
+
+.skill-section p {
+  font-size: 1.2rem;
+  width: 50vw;
+  margin: 0;
+}
+
+.level {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+} 

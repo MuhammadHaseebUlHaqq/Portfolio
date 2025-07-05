@@ -1,0 +1,144 @@
+:root {
+  --gsap-green-light: #adff72;
+  --gsap-green-dark: #00e63a;
+  --navbar-bg: #0d0d0d;
+  --text-inactive: #777;
+  --text-active: #fff;
+  --border-radius-pill: 9999px;
+}
+
+/* PPMori font family */
+@font-face {
+  font-family: 'PPMori';
+  src: url('../assets/fonts/PPMori-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPMori';
+  src: url('../assets/fonts/PPMori-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'PPMori', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden; 
+}
+
+.header-container {
+  width: 100%;
+}
+
+.announcement-bar {
+  width: 100%;
+  background: linear-gradient(90deg, var(--gsap-green-dark) 0%, var(--gsap-green-light) 100%);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  font-weight: 400;
+}
+
+.announcement-icon {
+  font-size: 1.2rem;
+}
+
+.announcement-text a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.navbar {
+  background: var(--navbar-bg);
+  color: var(--text-active);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 2rem 0.8rem 3rem;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  margin-right: 2rem;
+}
+
+.logo-img svg,
+.logo-img {
+  height: 32px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--text-inactive);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  line-height: 1;
+}
+
+.nav-link:hover {
+  color: var(--text-active);
+}
+
+.login-link {
+  color: var(--text-inactive);
+  margin-right: 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.login-link:hover {
+  color: var(--text-active);
+}
+
+.get-gsap-btn {
+  padding: 0.5rem 1.8rem;
+  background: transparent;
+  color: var(--text-active);
+  border: 2px solid var(--text-active);
+  border-radius: var(--border-radius-pill);
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.get-gsap-btn:hover {
+  background: var(--text-active);
+  color: var(--navbar-bg);
+}
+
+.nav-right {
+  margin-left: auto;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+} 

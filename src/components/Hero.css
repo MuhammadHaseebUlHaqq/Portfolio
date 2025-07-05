@@ -1,0 +1,150 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background: #0d0d0d;
+  color: #fffce1;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 3vw;
+  padding-right: 4vw;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+}
+
+.hero-inner {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 6rem;
+}
+
+.hero-line {
+  font-size: clamp( 6.5rem, 16vw, 22rem);
+  font-weight: 600; /* SemiBold */
+  font-family: 'PPMori', sans-serif;
+  margin: 0;
+  line-height: 0.82;
+  position: relative;
+  z-index: 2;
+}
+
+.line-2 {
+  margin-left: 1.6em; /* Position "anything" to start after "i" (3rd letter) in "Animate" */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+#flip-i {
+  display: inline-block;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  width: 0.3em;
+  text-align: center;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+.pinwheel {
+  position: absolute;
+  top: -5rem;
+  left: 9.5em;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+}
+
+.worm {
+  position: absolute;
+  right: 25vw;
+  bottom: -2rem;
+  width: 90px;
+  pointer-events: none;
+  z-index: 1;
+  transform: scale(0.8) rotate(15deg);
+}
+
+.ribbon {
+  position: absolute;
+  right: 4vw;
+  bottom: -7rem;
+  width: 170px;
+  height: 320px;
+  pointer-events: none;
+}
+
+.callout {
+  position: absolute;
+  left: -1rem;
+  bottom: -8rem;
+  font-family: inherit;
+  font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+  width: auto;
+  max-width: 70%;
+  line-height: 1.25;
+  display: flex;
+  gap: 0;
+  padding: 0 0.5rem;
+  color: #fffce1;
+  justify-content: flex-start;
+}
+
+.callout .brace {
+  color: #fffce1;
+  width: auto;
+  margin: 0 0.15rem 0 0;
+  font-size: 3.5rem; /* smaller brace */
+  line-height: 0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-cta {
+  position: absolute;
+  right: 4vw;
+  padding: 0.7rem 2.8rem;
+  font-size: 1.35rem;
+  border: 2px solid #00ff81;
+  border-radius: 9999px;
+  bottom: -7rem;
+}
+
+#gsap-btn {
+  position: absolute;
+  right: 4vw;
+  bottom: -8rem;
+  padding: 0.8rem 5rem;
+  min-width: 240px;
+  font-size: 1.3rem;
+  border: 2px solid #00ff81;
+  border-radius: 9999px;
+  background: transparent;
+  color: #fffce1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  overflow: visible;
+  cursor: pointer;
+  z-index: 3;
+}
+
+#gsap-btn:hover {
+  background: transparent;
+  border-color: #00ff81;
+  color: #fffce1;
+}
+
+.btn-word {
+  display: inline-block;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  pointer-events: none;
+} 
