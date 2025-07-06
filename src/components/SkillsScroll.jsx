@@ -52,7 +52,7 @@ const SkillsScroll = () => {
           trigger: container,
           pin: true,
           scrub: 1,
-          end: `+=${sections.length * 1000}`,
+          end: () => `+=${container.scrollWidth - window.innerWidth}`,
         },
       })
 

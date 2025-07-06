@@ -44,7 +44,11 @@
 
 .skill-section {
   width: 100vw;
-  padding: 8vw 10vw;
+  height: 100vh;             /* occupy full viewport height */
+  display: flex;             /* vertically center content */
+  flex-direction: column;
+  justify-content: center;
+  padding: 4vw 6vw;          /* slightly reduced vertical padding */
   box-sizing: border-box;
 }
 
@@ -55,7 +59,7 @@
 
 .skill-section .col {
   display: flex;
-  gap: 3em;
+  gap: 2em;
 }
 
 .skill-section p {
@@ -69,4 +73,26 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.5rem;
+}
+
+/* Optional subtle texture to avoid large voids */
+.skills-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 35% 40%, rgb(255 255 255 / 4%) 0%, transparent 50%),
+              radial-gradient(circle at 65% 60%, rgb(255 255 255 / 3%) 0%, transparent 40%);
+  opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+  .skill-section {
+    padding: 10vw 6vw;
+  }
+
+  .skill-section .col {
+    flex-direction: column;
+    gap: 1.5em;
+  }
 } 

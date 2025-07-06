@@ -47,18 +47,18 @@
 
 .pinwheel {
   position: absolute;
-  top: -5rem;
-  left: 9.5em;
-  width: 100px;
-  height: 100px;
+  top: clamp(-5rem, -8vw, -3rem);
+  left: clamp(6vw, 11vw, 14vw);
+  width: clamp(60px, 8vw, 120px);
+  height: clamp(60px, 8vw, 120px);
   pointer-events: none;
 }
 
 .worm {
   position: absolute;
-  right: 25vw;
-  bottom: -2rem;
-  width: 90px;
+  right: clamp(12vw, 24vw, 30vw);
+  bottom: clamp(-2rem, -4vw, -1rem);
+  width: clamp(60px, 9vw, 120px);
   pointer-events: none;
   z-index: 1;
   transform: scale(0.8) rotate(15deg);
@@ -172,19 +172,13 @@
     white-space: normal;         /* Allow wrapping on small screens */
   }
 
-  /* Decorative images */
+  /* Decorative images inherit clamp sizes; slight scale-down for tablets */
   .pinwheel {
-    width: 60px;
-    height: 60px;
-    top: -1rem;
-    left: 4vw;
+    transform: scale(0.9);
   }
 
   .worm {
-    width: 60px;
-    right: 10vw;
-    bottom: 0;
-    transform: scale(0.7) rotate(15deg);
+    transform: scale(0.75) rotate(15deg);
   }
 
   /* Tagline */
@@ -227,12 +221,6 @@
     display: block;
     margin: 2rem auto 0;
     padding: 0.8rem 2.6rem;
-  }
-
-  /* Hide decorative elements that overlap content */
-  .pinwheel,
-  .worm {
-    display: none;
   }
 }
 
