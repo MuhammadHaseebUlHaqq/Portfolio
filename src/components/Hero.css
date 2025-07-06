@@ -147,4 +147,93 @@
   height: 10px;
   border-radius: 50%;
   pointer-events: none;
-} 
+}
+
+/* -------------------------------------------------- */
+/* Responsive tweaks for tablets and below */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;                /* Allow section to grow naturally */
+    padding: 20vh 6vw 12vh;      /* Top padding for spacing below navbar */
+  }
+
+  .hero-inner {
+    margin-top: 0;               /* Reduce large top margin */
+  }
+
+  .hero-line {
+    /* Reduce size to avoid overflow */
+    font-size: clamp(3.5rem, 14vw, 6rem);
+    line-height: 0.9;
+  }
+
+  .line-2 {
+    margin-left: 0;              /* Remove offset that causes horizontal scroll */
+    white-space: normal;         /* Allow wrapping on small screens */
+  }
+
+  /* Decorative images */
+  .pinwheel {
+    width: 60px;
+    height: 60px;
+    top: -1rem;
+    left: 4vw;
+  }
+
+  .worm {
+    width: 60px;
+    right: 10vw;
+    bottom: 0;
+    transform: scale(0.7) rotate(15deg);
+  }
+
+  /* Tagline */
+  .callout {
+    position: static;            /* Flow with document */
+    margin-top: 2rem;
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .callout .brace {
+    font-size: 2rem;
+  }
+
+  /* CTA button */
+  #gsap-btn {
+    position: static;            /* Flow below content */
+    margin-top: 2.4rem;
+    padding: 0.8rem 3rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .hero {
+    padding: 18vh 5vw 10vh;
+  }
+
+  .hero-line {
+    font-size: clamp(2.8rem, 17vw, 5rem);
+  }
+
+  .callout {
+    font-size: 0.95rem;
+  }
+
+  #gsap-btn {
+    width: auto;
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.8rem 2.6rem;
+  }
+
+  /* Hide decorative elements that overlap content */
+  .pinwheel,
+  .worm {
+    display: none;
+  }
+}
+
+/* -------------------------------------------------- */ 

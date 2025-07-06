@@ -137,7 +137,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="hero" ref={heroRef}>
+    <section className="hero" id="home" ref={heroRef}>
       <div className="hero-inner">
         <h1 className="hero-line line-1">Code</h1>
         <h1 className="hero-line line-2">anyth<span id="flip-i">i</span>ng</h1>

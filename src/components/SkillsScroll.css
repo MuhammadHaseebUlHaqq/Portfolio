@@ -39,7 +39,7 @@
 
 .skills-container {
   display: flex;
-  width: 500vw; /* 5 sections */
+  width: 400vw; /* 4 sections */
 }
 
 .skill-section {

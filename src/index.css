@@ -69,6 +69,7 @@ button:focus-visible {
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .section-divider {

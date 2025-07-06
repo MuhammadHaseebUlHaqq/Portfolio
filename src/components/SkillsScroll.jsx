@@ -10,36 +10,29 @@ const skills = [
     id: 'front-end',
     level: 'Expert',
     name: 'Front-End',
-    desc1: 'HTML, CSS, JavaScript, React, Vue – building pixel-perfect interfaces with performance in mind.',
+    desc1: 'React and Next.js – building pixel-perfect interfaces with performance in mind.',
     desc2: 'Focus on accessibility, animation, and component-driven architecture.',
   },
   {
     id: 'back-end',
     level: 'Advanced',
     name: 'Back-End',
-    desc1: 'Node.js, Express, REST/GraphQL APIs, SQL & NoSQL databases.',
+    desc1: 'Express.js (Node) & FastAPI (Python) REST/GraphQL APIs, SQL & NoSQL databases.',
     desc2: 'Designing scalable architectures, authentication, and real-time data pipelines.',
   },
   {
     id: 'gen-ai',
     level: 'Researching',
     name: 'Generative AI',
-    desc1: 'Prompt engineering, fine-tuning LLMs, vector search, RAG pipelines.',
-    desc2: 'Building chatbots and creative tools with OpenAI, LangChain, Pinecone.',
+    desc1: 'LLMs, RAG, LangGraph pipelines, vector search.',
+    desc2: 'Building chatbots and creative tools with OpenAI and open-source models.',
   },
   {
     id: 'mobile',
     level: 'Proficient',
     name: 'Mobile App Dev',
-    desc1: 'React Native & Flutter for cross-platform applications.',
-    desc2: 'Publishing workflows, performance tuning, native module bridging.',
-  },
-  {
-    id: 'devops',
-    level: 'Skilled',
-    name: 'DevOps',
-    desc1: 'Docker, Kubernetes, CI/CD with GitHub Actions, Terraform IaC.',
-    desc2: 'Automating deployments and monitoring with Prometheus & Grafana.',
+    desc1: 'Native Android development using Java SDK.',
+    desc2: 'Crafting intuitive, performant mobile experiences.',
   },
 ]
 
@@ -97,7 +90,7 @@ const SkillsScroll = () => {
   }, [])
 
   return (
-    <div className="skills-wrapper" ref={wrapperRef}>
+    <div className="skills-wrapper" id="skills" ref={wrapperRef}>
       <div className="skills-heading why-heading">
         <span className="brace">&#123;</span>
         <span className="title-text">Skills</span>
