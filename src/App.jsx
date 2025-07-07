@@ -4,12 +4,10 @@ import WhyGsap from './components/WhyGsap'
 import Projects from './components/Projects'
 import SkillsScroll from './components/SkillsScroll'
 import Contact from './components/Contact'
-import CustomCursor from './components/CustomCursor'
 
 function App() {
   return (
     <>
-      <CustomCursor />
       <Header />
       <Hero />
       <div className="section-divider" />
