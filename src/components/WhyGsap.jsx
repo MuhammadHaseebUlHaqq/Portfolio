@@ -39,7 +39,7 @@ const WhyGsap = () => {
               <span className="timeline-duration">Jun&nbsp;2025&nbsp;—&nbsp;Present</span>
               <div className="timeline-content">
                 <span className="timeline-title">Alfabolt</span>
-                <span className="timeline-subtitle">Front-End Intern</span>
+                <span className="timeline-subtitle"> Intern</span>
               </div>
             </li>
           </ul>
@@ -56,21 +56,21 @@ const WhyGsap = () => {
               <span className="timeline-duration">2023&nbsp;—&nbsp;Present</span>
               <div className="timeline-content">
                 <span className="timeline-title">National University Of Science And Technology</span>
-                <span className="timeline-subtitle">Bachelor in Computer Science (CGPA: 3.82)</span>
+                <span className="timeline-subtitle">Bachelor in Computer Science (CGPA: 3.76)</span>
               </div>
             </li>
             <li className="timeline-item">
               <span className="timeline-duration">2021&nbsp;—&nbsp;2023</span>
               <div className="timeline-content">
                 <span className="timeline-title">Punjab Group of Colleges</span>
-                <span className="timeline-subtitle">FSC Pre-Engineering (1023/1100)</span>
+                <span className="timeline-subtitle">FSC Pre-Engineering (Grade: A)</span>
               </div>
             </li>
             <li className="timeline-item">
               <span className="timeline-duration">2019&nbsp;—&nbsp;2021</span>
               <div className="timeline-content">
                 <span className="timeline-title">Army Public School</span>
-                <span className="timeline-subtitle">Matric Computer Science (1075/1100)</span>
+                <span className="timeline-subtitle">Matric Computer Science (Grade: A)</span>
               </div>
             </li>
           </ul>
