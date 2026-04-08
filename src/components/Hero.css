@@ -5,19 +5,27 @@
   color: #fffce1;
   overflow: hidden;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-start;
   padding-left: 3vw;
   padding-right: 4vw;
   box-sizing: border-box;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 .hero-inner {
   position: relative;
   max-width: 1200px;
   width: 100%;
-  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+  padding-bottom: 4vh;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-line {
@@ -47,17 +55,18 @@
 
 .pinwheel {
   position: absolute;
-  top: clamp(-5rem, -8vw, -3rem);
-  left: clamp(6vw, 11vw, 14vw);
+  top: clamp(0rem, 1vw, 2.5rem);
+  left: clamp(8vw, 12vw, 16vw);
   width: clamp(60px, 8vw, 120px);
   height: clamp(60px, 8vw, 120px);
   pointer-events: none;
+  z-index: 3;
 }
 
 .worm {
   position: absolute;
-  right: clamp(12vw, 24vw, 30vw);
-  bottom: clamp(-2rem, -4vw, -1rem);
+  left: clamp(48vw, 59vw, 68vw);
+  top: clamp(7rem, calc(6rem + 14vw), 30rem);
   width: clamp(60px, 9vw, 120px);
   pointer-events: none;
   z-index: 1;
@@ -73,27 +82,32 @@
   pointer-events: none;
 }
 
+.hero-bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+}
+
 .callout {
-  position: absolute;
-  left: -1rem;
-  bottom: -8rem;
   font-family: inherit;
-  font-size: clamp(1.2rem, 1.2vw, 1.6rem);
-  width: auto;
-  max-width: 70%;
+  font-size: clamp(1rem, 1.2vw, 1.6rem);
+  max-width: 60%;
   line-height: 1.25;
   display: flex;
+  align-items: center;
   gap: 0;
-  padding: 0 0.5rem;
+  padding: 0 0.5rem 0 0;
   color: #fffce1;
-  justify-content: flex-start;
 }
 
 .callout .brace {
   color: #fffce1;
   width: auto;
   margin: 0 0.15rem 0 0;
-  font-size: 3.5rem; /* smaller brace */
+  font-size: 3.5rem;
   line-height: 0.75;
   display: flex;
   align-items: center;
@@ -101,19 +115,15 @@
 }
 
 .hero-cta {
-  position: absolute;
-  right: 4vw;
+  flex-shrink: 0;
   padding: 0.7rem 2.8rem;
   font-size: 1.35rem;
   border: 2px solid #00ff81;
   border-radius: 9999px;
-  bottom: -7rem;
 }
 
 #gsap-btn {
-  position: absolute;
-  right: 4vw;
-  bottom: -8rem;
+  flex-shrink: 0;
   padding: 0.8rem 5rem;
   min-width: 240px;
   font-size: 1.3rem;
@@ -153,38 +163,51 @@
 /* Responsive tweaks for tablets and below */
 @media (max-width: 768px) {
   .hero {
-    height: auto;                /* Allow section to grow naturally */
-    padding: 20vh 6vw 12vh;      /* Top padding for spacing below navbar */
+    height: 100svh;
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
 
   .hero-inner {
-    margin-top: 0;               /* Reduce large top margin */
+    padding-top: 18vh;
+    padding-bottom: 5vh;
   }
 
   .hero-line {
-    /* Reduce size to avoid overflow */
     font-size: clamp(3.5rem, 14vw, 6rem);
     line-height: 0.9;
   }
 
   .line-2 {
-    margin-left: 0;              /* Remove offset that causes horizontal scroll */
-    white-space: normal;         /* Allow wrapping on small screens */
+    margin-left: 0;
+    white-space: normal;
   }
 
-  /* Decorative images inherit clamp sizes; slight scale-down for tablets */
+  /* Recalculate decoration positions:
+     - padding-top is now 18vh (absolute children ignore padding, so top:0 = hero-inner top)
+     - "Code" starts at top: 18vh
+     - font-size is 14vw; line-2 has no margin-left so "anything" starts at left edge */
   .pinwheel {
+    top: calc(18vh - 2vw);      /* just above "Code" top edge */
+    left: clamp(8vw, 12vw, 16vw);
     transform: scale(0.9);
   }
 
   .worm {
+    /* "h" = 4 chars in at 14vw font, ~0.6em each: 4×0.6×14vw ≈ 34vw from left */
+    left: clamp(28vw, 34vw, 42vw);
+    /* below "Code" line: 18vh + line1-height(14vw×0.9) */
+    top: calc(18vh + 12vw);
     transform: scale(0.75) rotate(15deg);
   }
 
-  /* Tagline */
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
   .callout {
-    position: static;            /* Flow with document */
-    margin-top: 2rem;
     font-size: 1rem;
     max-width: 100%;
     padding: 0;
@@ -194,22 +217,34 @@
     font-size: 2rem;
   }
 
-  /* CTA button */
   #gsap-btn {
-    position: static;            /* Flow below content */
-    margin-top: 2.4rem;
     padding: 0.8rem 3rem;
+    min-width: unset;
+    align-self: flex-start;
   }
 }
 
 /* Extra small devices */
 @media (max-width: 480px) {
-  .hero {
-    padding: 18vh 5vw 10vh;
+  .hero-inner {
+    padding-top: 16vh;
+    padding-bottom: 4vh;
   }
 
   .hero-line {
     font-size: clamp(2.8rem, 17vw, 5rem);
+  }
+
+  /* padding-top now 16vh; font-size ~17vw; line-2 still no margin */
+  .pinwheel {
+    top: calc(16vh - 2vw);
+    left: clamp(9vw, 13vw, 17vw);
+  }
+
+  .worm {
+    /* "h" at 4×0.6×17vw ≈ 41vw from left */
+    left: clamp(30vw, 38vw, 46vw);
+    top: calc(16vh + 14vw);
   }
 
   .callout {
@@ -217,9 +252,6 @@
   }
 
   #gsap-btn {
-    width: auto;
-    display: block;
-    margin: 2rem auto 0;
     padding: 0.8rem 2.6rem;
   }
 }

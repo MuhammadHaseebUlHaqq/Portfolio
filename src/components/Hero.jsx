@@ -139,22 +139,25 @@ const Hero = () => {
   return (
     <section className="hero" id="home" ref={heroRef}>
       <div className="hero-inner">
-        <h1 className="hero-line line-1">Code</h1>
-        <h1 className="hero-line line-2">anyth<span id="flip-i">i</span>ng</h1>
+        <div className="hero-text">
+          <h1 className="hero-line line-1">Code</h1>
+          <h1 className="hero-line line-2">anyth<span id="flip-i">i</span>ng</h1>
+        </div>
 
         {/* Decorations */}
         <img src={fanImg} className="pinwheel" alt="" />
-
         <img src={wormImg} className="worm" alt="" />
 
-        <div className="callout">
-          <span className="brace">&#123;</span> Crafting robust software solutions with passion and professionalism <span className="brace">&#125;</span>
-        </div>
+        <div className="hero-bottom">
+          <div className="callout">
+            <span className="brace">&#123;</span> Crafting robust software solutions with passion and professionalism <span className="brace">&#125;</span>
+          </div>
 
-        <button className="hero-cta get-gsap-btn" id="gsap-btn">
-          <span className="btn-word word-get">Hire</span>
-          <span className="btn-word word-gsap">Me</span>
-        </button>
+          <button className="hero-cta get-gsap-btn" id="gsap-btn">
+            <span className="btn-word word-get">Hire</span>
+            <span className="btn-word word-gsap">Me</span>
+          </button>
+        </div>
       </div>
     </section>
   )
