@@ -24,7 +24,7 @@ function AvatarModel() {
   })
 
   return (
-    <group ref={groupRef} position={[0, -2.1, 0]} scale={1.7}>
+    <group ref={groupRef} position={[0, -1.6, 0]} scale={1.7}>
       <primitive object={scene} />
     </group>
   )
