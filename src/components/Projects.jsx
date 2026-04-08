@@ -3,11 +3,35 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Projects.css';
 import rideTogetherImg from '../assets/images/ridetogether.png';
+import rideTogetherAvif480 from '../assets/images/ridetogether-480.avif';
+import rideTogetherAvif960 from '../assets/images/ridetogether-960.avif';
+import rideTogetherWebp480 from '../assets/images/ridetogether-480.webp';
+import rideTogetherWebp960 from '../assets/images/ridetogether-960.webp';
 import ballInfoImg from '../assets/images/ballinfo.png';
+import ballInfoAvif480 from '../assets/images/ballinfo-480.avif';
+import ballInfoAvif960 from '../assets/images/ballinfo-960.avif';
+import ballInfoWebp480 from '../assets/images/ballinfo-480.webp';
+import ballInfoWebp960 from '../assets/images/ballinfo-960.webp';
 import havocImg from '../assets/images/havoc.png';
+import havocAvif480 from '../assets/images/havoc-480.avif';
+import havocAvif960 from '../assets/images/havoc-960.avif';
+import havocWebp480 from '../assets/images/havoc-480.webp';
+import havocWebp960 from '../assets/images/havoc-960.webp';
 import footAnalysisImg from '../assets/images/footanalysis.png';
+import footAnalysisAvif480 from '../assets/images/footanalysis-480.avif';
+import footAnalysisAvif960 from '../assets/images/footanalysis-960.avif';
+import footAnalysisWebp480 from '../assets/images/footanalysis-480.webp';
+import footAnalysisWebp960 from '../assets/images/footanalysis-960.webp';
 import botverseImg from '../assets/images/botverse.png';
+import botverseAvif480 from '../assets/images/botverse-480.avif';
+import botverseAvif960 from '../assets/images/botverse-960.avif';
+import botverseWebp480 from '../assets/images/botverse-480.webp';
+import botverseWebp960 from '../assets/images/botverse-960.webp';
 import smartdocsImg from '../assets/images/smartdocs.png';
+import smartdocsAvif480 from '../assets/images/smartdocs-480.avif';
+import smartdocsAvif960 from '../assets/images/smartdocs-960.avif';
+import smartdocsWebp480 from '../assets/images/smartdocs-480.webp';
+import smartdocsWebp960 from '../assets/images/smartdocs-960.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +43,8 @@ const projects = [
     demo: 'https://ridetogether.vercel.app/',
     code: '',
     img: rideTogetherImg,
+    imgAvifSrcSet: `${rideTogetherAvif480} 480w, ${rideTogetherAvif960} 960w`,
+    imgWebpSrcSet: `${rideTogetherWebp480} 480w, ${rideTogetherWebp960} 960w`,
     tags: ['Design', 'Development'],
   },
   {
@@ -28,6 +54,8 @@ const projects = [
     demo: '',
     code: 'https://github.com/MuhammadHaseebUlHaqq/HavocBoxing',
     img: havocImg,
+    imgAvifSrcSet: `${havocAvif480} 480w, ${havocAvif960} 960w`,
+    imgWebpSrcSet: `${havocWebp480} 480w, ${havocWebp960} 960w`,
     tags: ['Mobile'],
   },
   {
@@ -37,6 +65,8 @@ const projects = [
     demo: '',
     code: 'https://github.com/MuhammadHaseebUlHaqq/BotVerse',
     img: botverseImg,
+    imgAvifSrcSet: `${botverseAvif480} 480w, ${botverseAvif960} 960w`,
+    imgWebpSrcSet: `${botverseWebp480} 480w, ${botverseWebp960} 960w`,
     tags: ['AI', 'RAG', 'LLMs'],
   },
   {
@@ -46,6 +76,8 @@ const projects = [
     demo: '',
     code: 'https://github.com/MuhammadHaseebUlHaqq/SmartDocs',
     img: smartdocsImg,
+    imgAvifSrcSet: `${smartdocsAvif480} 480w, ${smartdocsAvif960} 960w`,
+    imgWebpSrcSet: `${smartdocsWebp480} 480w, ${smartdocsWebp960} 960w`,
     tags: ['RAG', 'LLMs'],
   },
   {
@@ -55,6 +87,8 @@ const projects = [
     demo: '',
     code: 'https://github.com/MuhammadHaseebUlHaqq/ballinfo',
     img: ballInfoImg,
+    imgAvifSrcSet: `${ballInfoAvif480} 480w, ${ballInfoAvif960} 960w`,
+    imgWebpSrcSet: `${ballInfoWebp480} 480w, ${ballInfoWebp960} 960w`,
     tags: ['Design', 'Development'],
   },
   {
@@ -64,6 +98,8 @@ const projects = [
     demo: '',
     code: 'https://github.com/ZaynIkhlaq/Football-Analysis',
     img: footAnalysisImg,
+    imgAvifSrcSet: `${footAnalysisAvif480} 480w, ${footAnalysisAvif960} 960w`,
+    imgWebpSrcSet: `${footAnalysisWebp480} 480w, ${footAnalysisWebp960} 960w`,
     tags: ['Computer Vision'],
   },
 ];
@@ -158,6 +194,8 @@ function Projects() {
       projects.forEach((project) => {
         const img = new Image();
         img.decoding = 'async';
+        img.sizes = '(max-width: 600px) 92vw, (max-width: 860px) 46vw, 30vw';
+        img.srcset = project.imgWebpSrcSet;
         img.src = project.img;
       });
     };
@@ -198,13 +236,25 @@ function Projects() {
                     {proj.title}
                   </h2>
                   <div className="project-image-frame">
-                    <img
-                      src={proj.img}
-                      alt={proj.title}
-                      loading={index < INITIAL_COUNT ? 'eager' : 'lazy'}
-                      fetchPriority={index === 0 ? 'high' : 'auto'}
-                      decoding="async"
-                    />
+                    <picture>
+                      <source
+                        type="image/avif"
+                        srcSet={proj.imgAvifSrcSet}
+                        sizes="(max-width: 600px) 92vw, (max-width: 860px) 46vw, 30vw"
+                      />
+                      <source
+                        type="image/webp"
+                        srcSet={proj.imgWebpSrcSet}
+                        sizes="(max-width: 600px) 92vw, (max-width: 860px) 46vw, 30vw"
+                      />
+                      <img
+                        src={proj.img}
+                        alt={proj.title}
+                        loading={index < INITIAL_COUNT ? 'eager' : 'lazy'}
+                        fetchPriority={index === 0 ? 'high' : 'auto'}
+                        decoding="async"
+                      />
+                    </picture>
                   </div>
                   <div className="project--showcaseBtn">
                     <a
