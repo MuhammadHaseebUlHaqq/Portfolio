@@ -152,6 +152,25 @@ function Projects() {
     );
   }, [visible.length]);
 
+  // Warm project image cache during idle time to reduce perceived latency.
+  useEffect(() => {
+    const preload = () => {
+      projects.forEach((project) => {
+        const img = new Image();
+        img.decoding = 'async';
+        img.src = project.img;
+      });
+    };
+
+    if ('requestIdleCallback' in window) {
+      const idleId = window.requestIdleCallback(preload, { timeout: 1200 });
+      return () => window.cancelIdleCallback(idleId);
+    }
+
+    const timeoutId = window.setTimeout(preload, 200);
+    return () => window.clearTimeout(timeoutId);
+  }, []);
+
   return (
     <section className="projects-section" id="projects" ref={sectionRef}>
       <div className="projects-header">
@@ -168,7 +187,7 @@ function Projects() {
 
       <div className="projects--body">
         <div className="projects--bodyContainer">
-          {visible.map((proj) => {
+          {visible.map((proj, index) => {
             const slug = proj.title.replace(/\s+/g, '-').toLowerCase();
             const demoHref = proj.demo || proj.code;
             const codeHref = proj.code || proj.demo;
@@ -179,7 +198,13 @@ function Projects() {
                     {proj.title}
                   </h2>
                   <div className="project-image-frame">
-                    <img src={proj.img} alt={proj.title} loading="lazy" />
+                    <img
+                      src={proj.img}
+                      alt={proj.title}
+                      loading={index < INITIAL_COUNT ? 'eager' : 'lazy'}
+                      fetchPriority={index === 0 ? 'high' : 'auto'}
+                      decoding="async"
+                    />
                   </div>
                   <div className="project--showcaseBtn">
                     <a
