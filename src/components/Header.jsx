@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './Header.css'
 import GsapLogo from './GsapLogo'
 
-const resumeUrl = 'https://drive.google.com/file/d/1QI09LDERwu-IjxVadoQ86W7omW4TJEsv/view?usp=drive_link'
+const resumeUrl = 'https://drive.google.com/file/d/129Z0cCXO5QVYf5nQiXxTSyLv-amdwjcF/view?usp=sharing'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
