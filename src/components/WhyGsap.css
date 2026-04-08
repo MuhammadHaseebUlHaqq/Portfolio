@@ -5,13 +5,45 @@
   color: #fffce1;
 }
 
+/* ---- About hero: text left + 3D avatar right ---- */
+.about-hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-hero-text {
+  flex: 1 1 55%;
+  min-width: 0;
+}
+
+.about-hero-avatar {
+  flex: 0 0 480px;
+  height: 540px;
+  position: relative;
+}
+
+.avatar3d-container {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Headings ---- */
 .why-heading {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 1.6rem;
   font-weight: 600;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .why-heading .brace {
@@ -24,14 +56,16 @@
   font-weight: 600;
 }
 
+/* ---- About copy ---- */
 .why-copy {
   font-family: 'PPMori', sans-serif;
-  font-size: clamp(2rem, 4.2vw, 6rem);
-  line-height: 1.1;
+  font-size: clamp(1.6rem, 3vw, 3.8rem);
+  line-height: 1.15;
   margin: 0;
-  max-width: 1200px;
+  max-width: 900px;
 }
 
+/* ---- Experience & Education ---- */
 .exp-edu-container {
   margin-top: 4rem;
   display: flex;
@@ -91,4 +125,46 @@
 .timeline-subtitle {
   font-size: 0.9rem;
   color: #a3a3a3;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .about-hero-avatar {
+    flex: 0 0 340px;
+    height: 400px;
+  }
+
+  .why-copy {
+    font-size: clamp(1.4rem, 2.8vw, 3rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column;
+  }
+
+  .about-hero-text {
+    flex: 1 1 auto;
+  }
+
+  .about-hero-avatar {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 380px;
+  }
+
+  .why-copy {
+    font-size: clamp(1.3rem, 5vw, 2.2rem);
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .timeline-content {
+    text-align: left;
+  }
 } 

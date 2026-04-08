@@ -67,15 +67,19 @@ body {
 }
 
 .logo-img {
-  height: 45px;
+  height: 80px;
   width: auto;
   display: block;
-  margin-right: 2.5rem;
+  margin-left: -0.9rem;
+  margin-right: 3.5rem;
+  border-radius: 50%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
 }
 
-.logo-img svg,
-.logo-img {
-  height: 40px;
+.logo-img:hover {
+  transform: scale(1.12) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(173, 255, 114, 0.6));
 }
 
 .nav-menu {
