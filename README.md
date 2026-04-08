@@ -1,12 +1,28 @@
-# React + Vite
+# Portfolio (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built with React, Vite, GSAP, and EmailJS for the contact form.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install dependencies:
+   - `npm install`
+2. Create `.env` in the project root using `.env.example`:
+   - `VITE_EMAILJS_SERVICE_ID`
+   - `VITE_EMAILJS_TEMPLATE_ID`
+   - `VITE_EMAILJS_PUBLIC_KEY`
+3. Run locally:
+   - `npm run dev`
 
-## Expanding the ESLint configuration
+## Contact Form (EmailJS)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The contact form uses `@emailjs/browser` and sends via:
+- `emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)`
+
+If you see this error:
+- `Invalid grant. Please reconnect your Gmail account`
+
+It means the connected Gmail account/token in EmailJS has expired or been revoked. Fix it from EmailJS dashboard:
+1. Open EmailJS dashboard -> `Email Services`
+2. Reconnect the Gmail service used by your `VITE_EMAILJS_SERVICE_ID`
+3. Confirm the template ID and public key still match your `.env`
+4. Restart the dev server after `.env` changes

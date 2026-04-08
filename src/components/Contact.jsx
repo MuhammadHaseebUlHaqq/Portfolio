@@ -6,28 +6,56 @@ import upworkLogo from '../assets/images/upwork.png'
 const Contact = () => {
   const formRef = useRef(null)
   const [status, setStatus] = useState(null)
+  const [statusMessage, setStatusMessage] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e) => {
+  const clearStatusAfterDelay = () => {
+    setTimeout(() => {
+      setStatus(null)
+      setStatusMessage('')
+    }, 2500)
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    const missing = []
+
+    if (!serviceId) missing.push('VITE_EMAILJS_SERVICE_ID')
+    if (!templateId) missing.push('VITE_EMAILJS_TEMPLATE_ID')
+    if (!publicKey) missing.push('VITE_EMAILJS_PUBLIC_KEY')
+
+    if (missing.length > 0) {
+      setStatus('error')
+      setStatusMessage(`Missing config: ${missing.join(', ')}. Add these to your .env file.`)
+      clearStatusAfterDelay()
+      return
+    }
 
     setLoading(true)
-    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
-      .then((result) => {
-        console.log(result.text)
-        setStatus('success')
-        e.target.reset()
-        setTimeout(() => setStatus(null), 1000)
-        setLoading(false)
-      }, (error) => {
-        console.log(error.text)
-        setStatus('error')
-        setTimeout(() => setStatus(null), 1000)
-        setLoading(false)
-      })
+    try {
+      const result = await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
+      console.log(result.text)
+      setStatus('success')
+      setStatusMessage('Message sent! I will get back to you soon.')
+      e.target.reset()
+      clearStatusAfterDelay()
+    } catch (error) {
+      const errorText = error?.text || error?.message || 'Something went wrong while sending.'
+      const invalidGrant = typeof errorText === 'string' && errorText.toLowerCase().includes('invalid grant')
+      console.log(errorText)
+      setStatus('error')
+      setStatusMessage(
+        invalidGrant
+          ? 'Email service authorization expired (Invalid grant). Reconnect your Gmail in EmailJS and try again.'
+          : `Unable to send message: ${errorText}`
+      )
+      clearStatusAfterDelay()
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -125,10 +153,10 @@ const Contact = () => {
               </button>
             </form>
             {status === 'success' && (
-              <div className="form-alert success">Message sent! I will get back to you soon.</div>
+              <div className="form-alert success">{statusMessage}</div>
             )}
             {status === 'error' && (
-              <div className="form-alert error">Oops – something went wrong. Please try again later.</div>
+              <div className="form-alert error">{statusMessage}</div>
             )}
           </div>
         </div>
