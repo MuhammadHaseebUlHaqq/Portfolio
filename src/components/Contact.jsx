@@ -72,14 +72,7 @@ const Contact = () => {
               </span>
               <a href="mailto:rajahaseebulhaq@gmail.com">rajahaseebulhaq@gmail.com</a>
             </li>
-            <li>
-              <span className="contact-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72 12.66 12.66 0 0 0 .7 2.81 2 2 0 0 1-.45 2L9.03 11a16 16 0 0 0 6 6l1.47-1.22a2 2 0 0 1 2-.45 12.66 12.66 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-              </span>
-              <a href="tel:+923341490899">+92 3341490899</a>
-            </li>
+            
           </ul>
           <div className="social-links">
             <a
