@@ -3,6 +3,8 @@ import sharp from 'sharp';
 
 const imagesDir = path.resolve('src/assets/images');
 const files = [
+  'bideez.png',
+  'careerprep.png',
   'ridetogether.png',
   'havoc.png',
   'botverse.png',

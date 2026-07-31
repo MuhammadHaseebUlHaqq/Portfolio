@@ -14,9 +14,9 @@ const WhyGsap = () => {
           </div>
 
           <p className="why-copy">
-            I'm Muhammad Haseeb, a software engineer who loves turning ideas into scalable, high-performance web applications.
+            I'm Muhammad Haseeb, a software engineer working across DevOps and applied AI — CI/CD pipelines, containers and Kubernetes on one side, LangChain, RAG and multi-agent systems on the other.
             <br />
-            Focused on delivering clean code, delightful user experiences, and continuous improvement.
+            Two-time 1st place hackathon winner, most recently at CUST 2026 against 160+ teams. I care about shipping things that actually run in production.
           </p>
         </div>
 
@@ -36,10 +36,24 @@ const WhyGsap = () => {
           </div>
           <ul className="timeline-list">
             <li className="timeline-item">
-              <span className="timeline-duration">Jun&nbsp;2025&nbsp;—&nbsp;Present</span>
+              <span className="timeline-duration">Jun&nbsp;2026&nbsp;—&nbsp;Present</span>
+              <div className="timeline-content">
+                <span className="timeline-title">Systems Limited</span>
+                <span className="timeline-subtitle">DevOps Engineer Intern</span>
+              </div>
+            </li>
+            <li className="timeline-item">
+              <span className="timeline-duration">Jul&nbsp;2025&nbsp;—&nbsp;Nov&nbsp;2025</span>
+              <div className="timeline-content">
+                <span className="timeline-title">Corzly</span>
+                <span className="timeline-subtitle">Software Engineer (Remote, USA)</span>
+              </div>
+            </li>
+            <li className="timeline-item">
+              <span className="timeline-duration">Jun&nbsp;2025&nbsp;—&nbsp;Aug&nbsp;2025</span>
               <div className="timeline-content">
                 <span className="timeline-title">Alfabolt</span>
-                <span className="timeline-subtitle"> Intern</span>
+                <span className="timeline-subtitle">Software Engineering Intern</span>
               </div>
             </li>
           </ul>
@@ -56,7 +70,7 @@ const WhyGsap = () => {
               <span className="timeline-duration">2023&nbsp;—&nbsp;Present</span>
               <div className="timeline-content">
                 <span className="timeline-title">National University Of Science And Technology</span>
-                <span className="timeline-subtitle">Bachelor in Computer Science (CGPA: 3.76)</span>
+                <span className="timeline-subtitle">Bachelor in Computer Science (CGPA: 3.78)</span>
               </div>
             </li>
             <li className="timeline-item">

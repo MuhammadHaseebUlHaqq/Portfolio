@@ -2,6 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Projects.css';
+import bideezImg from '../assets/images/bideez.png';
+import bideezAvif480 from '../assets/images/bideez-480.avif';
+import bideezAvif960 from '../assets/images/bideez-960.avif';
+import bideezWebp480 from '../assets/images/bideez-480.webp';
+import bideezWebp960 from '../assets/images/bideez-960.webp';
+import careerPrepImg from '../assets/images/careerprep.png';
+import careerPrepAvif480 from '../assets/images/careerprep-480.avif';
+import careerPrepAvif960 from '../assets/images/careerprep-960.avif';
+import careerPrepWebp480 from '../assets/images/careerprep-480.webp';
+import careerPrepWebp960 from '../assets/images/careerprep-960.webp';
 import rideTogetherImg from '../assets/images/ridetogether.png';
 import rideTogetherAvif480 from '../assets/images/ridetogether-480.avif';
 import rideTogetherAvif960 from '../assets/images/ridetogether-960.avif';
@@ -36,6 +46,28 @@ import smartdocsWebp960 from '../assets/images/smartdocs-960.webp';
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
+  {
+    id: 'proj7',
+    title: 'Bideez – Multi-Agent RFP Bidding Pipeline',
+    desc: '🏆 1st place, CUST Hackathon 2026 (160+ teams). Multi-agent AI pipeline that automates RFP/tender bidding end to end: it scores win probability before you draft, flags the risk gaps a buyer will raise, auto-writes compliant proposals, sources leads from scraping and inbound email, and runs a voice agent that roleplays a skeptical buyer so you can rehearse the call. Every won or lost bid feeds back into its memory.',
+    demo: 'https://bideez-frontend.vercel.app/',
+    code: '',
+    img: bideezImg,
+    imgAvifSrcSet: `${bideezAvif480} 480w, ${bideezAvif960} 960w`,
+    imgWebpSrcSet: `${bideezWebp480} 480w, ${bideezWebp960} 960w`,
+    tags: ['AI Agents', 'LLMs', 'Voice AI'],
+  },
+  {
+    id: 'proj8',
+    title: 'CareerPrep – AI Career Preparation Platform',
+    desc: '🏆 1st place, Soventure Web Dev Hackathon. A SaaS platform that gets job seekers interview-ready with AI: upload a resume and a Groq-served LLM parses and extracts your skills, matches you to relevant roles, scores your ATS compatibility, and runs voice-based mock interviews with feedback. Built on Python, FastAPI, and Supabase.',
+    demo: 'https://careerpreppp.vercel.app/',
+    code: '',
+    img: careerPrepImg,
+    imgAvifSrcSet: `${careerPrepAvif480} 480w, ${careerPrepAvif960} 960w`,
+    imgWebpSrcSet: `${careerPrepWebp480} 480w, ${careerPrepWebp960} 960w`,
+    tags: ['AI', 'FastAPI', 'LLMs'],
+  },
   {
     id: 'proj1',
     title: 'RideTogether – NUST Carpooling Platform',

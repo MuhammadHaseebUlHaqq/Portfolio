@@ -7,25 +7,32 @@ gsap.registerPlugin(ScrollTrigger)
 
 const skills = [
   {
-    id: 'front-end',
-    level: 'Expert',
-    name: 'Front-End',
-    desc1: 'React and Next.js – building pixel-perfect interfaces with performance in mind.',
-    desc2: 'Focus on accessibility, animation, and component-driven architecture.',
+    id: 'devops',
+    level: 'Advanced',
+    name: 'DevOps & Infra',
+    desc1: 'CI/CD with Azure DevOps Server and Jenkins, Docker containers, Kubernetes, systemd, Linux.',
+    desc2: 'Shipping FastAPI and Node.js microservices through release pipelines and deployment groups.',
+  },
+  {
+    id: 'gen-ai',
+    level: 'Advanced',
+    name: 'Generative AI',
+    desc1: 'LLMs, RAG, LangChain, multi-agent pipelines, embeddings and vector search with Pinecone.',
+    desc2: 'Hugging Face Transformers and vLLM for serving; building agentic products end to end.',
   },
   {
     id: 'back-end',
     level: 'Advanced',
     name: 'Back-End',
-    desc1: 'Express.js (Node) & FastAPI (Python) REST/GraphQL APIs, SQL & NoSQL databases.',
-    desc2: 'Designing scalable architectures, authentication, and real-time data pipelines.',
+    desc1: 'FastAPI (Python) and Express.js (Node) REST APIs, Supabase/PostgreSQL and MongoDB.',
+    desc2: 'Designing scalable architectures, authentication, and automated data pipelines.',
   },
   {
-    id: 'gen-ai',
-    level: 'Researching',
-    name: 'Generative AI',
-    desc1: 'LLMs, RAG, LangGraph pipelines, vector search.',
-    desc2: 'Building chatbots and creative tools with OpenAI and open-source models.',
+    id: 'front-end',
+    level: 'Expert',
+    name: 'Front-End',
+    desc1: 'React and Next.js – building pixel-perfect interfaces with performance in mind.',
+    desc2: 'Focus on accessibility, animation, and component-driven architecture.',
   },
   {
     id: 'mobile',
@@ -97,7 +104,7 @@ const SkillsScroll = () => {
         <span className="brace">&#125;</span>
       </div>
 
-      <div className="skills-container">
+      <div className="skills-container" style={{ width: `${skills.length * 100}vw` }}>
         <svg viewBox="0 0 900 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="skills-progress-bar">
           <path d="M9.9 6C9.44 8.28 7.42 10 5 10 2.24 10 0 7.76 0 5 0 2.24 2.24 0 5 0 7.42 0 9.44 1.72 9.9 4H445.1C445.56 1.72 447.58 0 450 0 452.42 0 454.44 1.72 454.9 4H890.1C890.56 1.72 892.58 0 895 0 897.76 0 900 2.24 900 5 900 7.76 897.76 10 895 10 892.58 10 890.56 8.28 890.1 6H454.9C454.44 8.28 452.42 10 450 10 447.58 10 445.56 8.28 445.1 6H9.9Z" fill="#D9D9D9" />
           <mask id="skillsMask" maskUnits="userSpaceOnUse" x="0" y="0" width="900" height="10">
