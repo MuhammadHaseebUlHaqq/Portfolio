@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import './Header.css'
 import GsapLogo from './GsapLogo'
 
-// Served from /public so the link always points at the resume committed in this repo.
-const resumeUrl = '/resume-muhammad-haseeb.pdf'
+const resumeUrl = 'https://drive.google.com/file/d/1_lqiYSXDB0v_ZNjDGZbC_sGZv_qkutHG/view?usp=sharing'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
