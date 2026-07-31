@@ -49,7 +49,7 @@ const projects = [
   {
     id: 'proj7',
     title: 'Bideez – Multi-Agent RFP Bidding Pipeline',
-    desc: '🏆 1st place, CUST Hackathon 2026 (160+ teams). Multi-agent AI pipeline that automates RFP/tender bidding end to end: it scores win probability before you draft, flags the risk gaps a buyer will raise, auto-writes compliant proposals, sources leads from scraping and inbound email, and runs a voice agent that roleplays a skeptical buyer so you can rehearse the call. Every won or lost bid feeds back into its memory.',
+    desc: 'Multi-agent pipeline that scores an RFP’s win probability, flags the gaps a buyer will raise, then writes the proposal. A voice agent roleplays a skeptical buyer for rehearsal. 1st place, CUST Hackathon 2026.',
     demo: 'https://bideez-frontend.vercel.app/',
     code: '',
     img: bideezImg,
@@ -60,7 +60,7 @@ const projects = [
   {
     id: 'proj8',
     title: 'CareerPrep – AI Career Preparation Platform',
-    desc: '🏆 1st place, Soventure Web Dev Hackathon. A SaaS platform that gets job seekers interview-ready with AI: upload a resume and a Groq-served LLM parses and extracts your skills, matches you to relevant roles, scores your ATS compatibility, and runs voice-based mock interviews with feedback. Built on Python, FastAPI, and Supabase.',
+    desc: 'Upload a resume and a Groq-served LLM extracts your skills, matches you to roles, and scores ATS compatibility, with voice-based mock interviews for practice. FastAPI and Supabase. 1st place, Soventure Web Dev Hackathon.',
     demo: 'https://careerpreppp.vercel.app/',
     code: '',
     img: careerPrepImg,
