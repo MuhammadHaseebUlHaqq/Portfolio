@@ -47,6 +47,21 @@ import llmInferenceAvif480 from '../assets/images/llminference-480.avif';
 import llmInferenceAvif960 from '../assets/images/llminference-960.avif';
 import llmInferenceWebp480 from '../assets/images/llminference-480.webp';
 import llmInferenceWebp960 from '../assets/images/llminference-960.webp';
+import distSgdImg from '../assets/images/distsgd.png';
+import distSgdAvif480 from '../assets/images/distsgd-480.avif';
+import distSgdAvif960 from '../assets/images/distsgd-960.avif';
+import distSgdWebp480 from '../assets/images/distsgd-480.webp';
+import distSgdWebp960 from '../assets/images/distsgd-960.webp';
+import emotionImg from '../assets/images/emotion.png';
+import emotionAvif480 from '../assets/images/emotion-480.avif';
+import emotionAvif960 from '../assets/images/emotion-960.avif';
+import emotionWebp480 from '../assets/images/emotion-480.webp';
+import emotionWebp960 from '../assets/images/emotion-960.webp';
+import forestCoverImg from '../assets/images/forestcover.png';
+import forestCoverAvif480 from '../assets/images/forestcover-480.avif';
+import forestCoverAvif960 from '../assets/images/forestcover-960.avif';
+import forestCoverWebp480 from '../assets/images/forestcover-480.webp';
+import forestCoverWebp960 from '../assets/images/forestcover-960.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,6 +98,39 @@ const projects = [
     imgAvifSrcSet: `${careerPrepAvif480} 480w, ${careerPrepAvif960} 960w`,
     imgWebpSrcSet: `${careerPrepWebp480} 480w, ${careerPrepWebp960} 960w`,
     tags: ['AI', 'FastAPI', 'LLMs'],
+  },
+  {
+    id: 'proj10',
+    title: 'Distributed SGD – Sync vs Async vs Hybrid Training',
+    desc: 'Parameter-server training of ResNet-18 on CIFAR-10 with synchronous, asynchronous, and a hybrid mode that switches policy mid-training based on worker timing, gradient variation, and loss trend. Measured with injected stragglers over three seeds: async kept ~45 images/s while sync dropped to 13.6 under a persistent straggler.',
+    demo: '',
+    code: 'https://github.com/MuhammadHaseebUlHaqq/distributed_sgd_pdc',
+    img: distSgdImg,
+    imgAvifSrcSet: `${distSgdAvif480} 480w, ${distSgdAvif960} 960w`,
+    imgWebpSrcSet: `${distSgdWebp480} 480w, ${distSgdWebp960} 960w`,
+    tags: ['Distributed Systems', 'PyTorch', 'Docker'],
+  },
+  {
+    id: 'proj11',
+    title: 'Facial Emotion Recognition – CNN on FER-2013',
+    desc: 'Classifies faces into seven emotions. Compared an MLP baseline, CNN variants, three optimizers, and MobileNetV2 transfer learning; the best CNN with built-in augmentation reached 58.3% test accuracy with 456k parameters (removing augmentation dropped it to 43.8%). Flask demo with face detection.',
+    demo: '',
+    code: 'https://github.com/MuhammadHaseebUlHaqq/facial_emotion_recognition',
+    img: emotionImg,
+    imgAvifSrcSet: `${emotionAvif480} 480w, ${emotionAvif960} 960w`,
+    imgWebpSrcSet: `${emotionWebp480} 480w, ${emotionWebp960} 960w`,
+    tags: ['Deep Learning', 'Computer Vision', 'TensorFlow'],
+  },
+  {
+    id: 'proj12',
+    title: 'Forest Cover Type Prediction – ML Model Comparison',
+    desc: 'Predicts one of seven forest cover types from cartographic data (15,120 samples, 56 features). Tuned seven classifiers with 5-fold GridSearchCV; XGBoost and AdaBoost led validation at 88.2%, Random Forest generalized best at 86.8% test accuracy. Streamlit app for live predictions.',
+    demo: 'https://forestcoverpredictionml-proj.streamlit.app/',
+    code: 'https://github.com/MuhammadHaseebUlHaqq/Forest_Cover_Prediction_ML',
+    img: forestCoverImg,
+    imgAvifSrcSet: `${forestCoverAvif480} 480w, ${forestCoverAvif960} 960w`,
+    imgWebpSrcSet: `${forestCoverWebp480} 480w, ${forestCoverWebp960} 960w`,
+    tags: ['Machine Learning', 'XGBoost', 'Streamlit'],
   },
   {
     id: 'proj1',

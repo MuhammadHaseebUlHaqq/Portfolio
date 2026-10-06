@@ -12,6 +12,9 @@ const files = [
   'ballinfo.png',
   'footanalysis.png',
   'llminference.png',
+  'forestcover.png',
+  'emotion.png',
+  'distsgd.png',
 ];
 const widths = [480, 960];
 
