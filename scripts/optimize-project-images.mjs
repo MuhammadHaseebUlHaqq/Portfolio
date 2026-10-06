@@ -11,6 +11,7 @@ const files = [
   'smartdocs.png',
   'ballinfo.png',
   'footanalysis.png',
+  'llminference.png',
 ];
 const widths = [480, 960];
 

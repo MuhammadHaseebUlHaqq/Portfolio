@@ -42,10 +42,26 @@ import smartdocsAvif480 from '../assets/images/smartdocs-480.avif';
 import smartdocsAvif960 from '../assets/images/smartdocs-960.avif';
 import smartdocsWebp480 from '../assets/images/smartdocs-480.webp';
 import smartdocsWebp960 from '../assets/images/smartdocs-960.webp';
+import llmInferenceImg from '../assets/images/llminference.png';
+import llmInferenceAvif480 from '../assets/images/llminference-480.avif';
+import llmInferenceAvif960 from '../assets/images/llminference-960.avif';
+import llmInferenceWebp480 from '../assets/images/llminference-480.webp';
+import llmInferenceWebp960 from '../assets/images/llminference-960.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
+  {
+    id: 'proj9',
+    title: 'LLM Inference Optimization – Measured on Real GPUs',
+    desc: 'Research on why LLM serving engines are fast. HuggingFace vs vLLM on one RTX 3060: KV cache pushed to OOM at 123k tokens, profiler traces showing 90% of the decode gap is GPU idle time, and batching sweeps across two cards. Also reproduced an SGLang CUDA-graph bug (5.76x slowdown) on a rented 4090. Write-ups on the blog.',
+    demo: '/blog',
+    code: 'https://github.com/MuhammadHaseebUlHaqq/llm-inference-optimization',
+    img: llmInferenceImg,
+    imgAvifSrcSet: `${llmInferenceAvif480} 480w, ${llmInferenceAvif960} 960w`,
+    imgWebpSrcSet: `${llmInferenceWebp480} 480w, ${llmInferenceWebp960} 960w`,
+    tags: ['Research', 'LLM Inference', 'vLLM', 'SGLang'],
+  },
   {
     id: 'proj7',
     title: 'Bideez – Multi-Agent RFP Bidding Pipeline',
@@ -250,8 +266,8 @@ function Projects() {
           <span className="brace">&#125;</span>
         </h1>
         <p className="projects-subtitle">
-          A curated selection of projects I&rsquo;ve built &mdash; from full-stack
-          platforms to AI-powered tools.
+          A curated selection of what I&rsquo;ve built and researched, from LLM
+          inference experiments to full-stack platforms and AI tools.
         </p>
       </div>
 
@@ -291,7 +307,7 @@ function Projects() {
                   <div className="project--showcaseBtn">
                     <a
                       href={demoHref}
-                      target="_blank"
+                      target={demoHref.startsWith('/') ? undefined : '_blank'}
                       rel="noopener noreferrer"
                       className="project-icon-btn"
                       aria-label={`${proj.title} live demo`}

@@ -4,6 +4,10 @@ import GsapLogo from './GsapLogo'
 
 const resumeUrl = 'https://drive.google.com/file/d/1_lqiYSXDB0v_ZNjDGZbC_sGZv_qkutHG/view?usp=sharing'
 
+// Off the home page (e.g. /blog), section anchors must point back at the home page.
+const onHome = window.location.pathname === '/'
+const homeAnchor = (hash) => (onHome ? hash : `/${hash}`)
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -33,7 +37,7 @@ function Header() {
       {/* Main Navigation */}
       <nav className={`navbar ${menuOpen ? 'open' : ''}`}>
         <div className="nav-left">
-          <a href="#" className="logo-link" aria-label="GSAP Home">
+          <a href={onHome ? '#' : '/'} className="logo-link" aria-label="GSAP Home">
             <GsapLogo className="logo-img" />
           </a>
         </div>
@@ -52,10 +56,11 @@ function Header() {
 
         <ul className="nav-menu">
           {[
-            { label: 'Home', href: '#home' },
-            { label: 'About', href: '#about' },
-            { label: 'Skills', href: '#skills' },
-            { label: 'Projects', href: '#projects' },
+            { label: 'Home', href: homeAnchor('#home') },
+            { label: 'About', href: homeAnchor('#about') },
+            { label: 'Skills', href: homeAnchor('#skills') },
+            { label: 'Projects', href: homeAnchor('#projects') },
+            { label: 'Blog', href: '/blog' },
           ].map((item) => (
             <li key={item.label} className="nav-item" onClick={() => setMenuOpen(false)}>
               <a href={item.href} className="nav-link">
@@ -69,7 +74,7 @@ function Header() {
           <a href={resumeUrl} className="login-link" target="_blank" rel="noopener noreferrer">
             Download Resume
           </a>
-          <a href="#contact" className="get-gsap-btn" onClick={() => setMenuOpen(false)}>
+          <a href={homeAnchor('#contact')} className="get-gsap-btn" onClick={() => setMenuOpen(false)}>
             Hire Me
           </a>
         </div>

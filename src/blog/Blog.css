@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Blog: same black page + cream text + green accent as the Projects section */
+
+.blog-page {
+  --blog-bg: #0d0d0d;
+  --blog-text: #fffce1;
+  --blog-muted: #9a9a90;
+  --blog-accent: #adff72;
+  --blog-card: #161616;
+  --blog-border: rgba(255, 252, 225, 0.14);
+
+  background: var(--blog-bg);
+  color: var(--blog-text);
+  font-family: 'Poppins', 'PPMori', sans-serif;
+  padding: 3rem 1rem 5rem;
+  min-height: 70vh;
+}
+
+.blog-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.blog-title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.blog-title .brace {
+  color: var(--blog-accent);
+}
+
+.blog-intro {
+  color: var(--blog-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 0 2.5rem;
+}
+
+.blog-page a {
+  color: var(--blog-accent);
+  font-weight: 500;
+}
+
+.blog-page a:hover {
+  color: var(--blog-text);
+}
+
+.blog-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.blog-page a.blog-card {
+  display: block;
+  padding: 1.5rem 1.6rem;
+  background: var(--blog-card);
+  border: 1px solid var(--blog-border);
+  border-radius: 14px;
+  color: var(--blog-text);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.blog-page a.blog-card:hover {
+  border-color: var(--blog-accent);
+  transform: translateY(-2px);
+}
+
+.blog-card h2 {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin: 0.35rem 0 0.6rem;
+}
+
+.blog-card p {
+  color: var(--blog-muted);
+  line-height: 1.65;
+  margin: 0 0 1rem;
+  font-weight: 400;
+}
+
+.blog-meta {
+  color: var(--blog-muted);
+  font-size: 0.9rem;
+}
+
+.blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.blog-tags span {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 9999px;
+  border: 1px solid var(--blog-border);
+  color: var(--blog-accent);
+}
+
+.blog-back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.blog-back-bottom {
+  margin: 3rem 0 0;
+}
+
+.post-title {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin: 0.4rem 0 1rem;
+}
+
+/* ---------- Article body ---------- */
+
+.post-body {
+  margin-top: 2rem;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  font-weight: 300;
+  overflow-wrap: break-word;
+}
+
+.post-body h2 {
+  font-size: 1.55rem;
+  line-height: 1.3;
+  font-weight: 600;
+  margin: 2.5rem 0 0.8rem;
+}
+
+.post-body h3 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.6rem;
+}
+
+.post-body p,
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1.2rem;
+}
+
+.post-body strong {
+  font-weight: 600;
+}
+
+.post-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.8rem 0;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.post-body code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.9em;
+  background: rgba(255, 252, 225, 0.08);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.post-body pre {
+  background: var(--blog-card);
+  border: 1px solid var(--blog-border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.post-body pre code {
+  background: none;
+  padding: 0;
+}
+
+.post-body blockquote {
+  margin: 1.5rem 0;
+  padding: 0.2rem 1.2rem;
+  border-left: 3px solid var(--blog-accent);
+  color: var(--blog-muted);
+}
+
+.post-body table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.post-body th,
+.post-body td {
+  border: 1px solid var(--blog-border);
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.post-body th {
+  background: var(--blog-card);
+  font-weight: 600;
+}
+
+.blog-footer {
+  background: #0d0d0d;
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.blog-footer a {
+  color: #777;
+  font-family: 'PPMori', sans-serif;
+}
+
+@media (max-width: 600px) {
+  .blog-page {
+    padding-top: 2rem;
+  }
+  .blog-title {
+    font-size: 2.3rem;
+  }
+  .post-title {
+    font-size: 1.8rem;
+  }
+  .post-body {
+    font-size: 1rem;
+  }
+}
